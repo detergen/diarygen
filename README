@@ -1,0 +1,14 @@
+Script to generate custtom diary.
+
+Using:
+
+	calend.pl [first_month] [last_month] [year] > table.tex
+
+	pdflatex calendar.tex
+
+It have to produce A5 pages with two sided layout diary. Schedule template on left and ToDo list on right side. Day, month and day of the week are in left upper corner in todo list. Weekend days are merged to one page, colored in red. The template can be easily corrected to suit your needs.
+
+This time availible only A5 format template (templateA5.tex) suitable for FiloFax diary. 
+Language - Russian, but can be translated in calend.pl.
+
+Full 2012 year example - calendar.pdf.
