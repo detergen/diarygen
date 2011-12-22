@@ -2,9 +2,7 @@ Script to generate custtom diary.
 
 Using:
 
-<<<<<<< HEAD
 	calend.pl [first_month] [last_month] [year] > table.tex
->>>>>>> 91d1b44cac8d5f8716bfd2a2a5cdcb9119d6a6be
 
 	pdflatex calendar.tex
 
