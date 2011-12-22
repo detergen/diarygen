@@ -1,0 +1,148 @@
+%### Template for FiloFax A5 Day Schedule on left side and ToDoListon right side 
+
+\newcommand{\datesize}{\fontsize{35.83pt}{20pt}\selectfont}
+
+\newcommand{\ttable}
+{
+\begin{tabular}{p{1cm}|p{4.5cm}|p{0.2cm}|p{4.5cm}} 
+	\hline
+	08:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	09:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	10:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	11:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	12:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	13:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	14:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	15:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	16:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	17:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	18:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	19:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	20:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	21:&&& \\ \cline{3-4}
+	&&& \\ \hline
+	22:&&& \\ \cline{3-4}
+	&&& \\ \hline
+\end{tabular}
+\newpage
+}
+
+\newcommand{\todolist}[3]
+{
+\tikzstyle{mybox} = [draw=black, rectangle, rounded corners, inner sep=5pt, inner ysep=5pt]
+\tikzstyle{fancytitle} =[fill=white, text=black]
+\begin{flushright}
+	\begin{tikzpicture}
+		\node [mybox] (box){
+			\begin{minipage}[t!]{2cm}
+				\begin{center}
+					\begin{datesize} #1 \end{datesize} \\
+					\normalsize #2 \\
+					#3 
+				\end{center}
+			\end{minipage}
+		};
+	\end{tikzpicture}%
+\end{flushright}
+
+\begin{tabular}{p{0.2cm}|p{10.5cm}} 
+	 \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+\end{tabular}
+\newpage
+}
+
+%todolist for weekend
+\newcommand{\todolistwe}[3]
+{
+\tikzstyle{mybox} = [draw=red, text=red, rectangle, rounded corners, inner sep=5pt, inner ysep=5pt]
+%\tikzstyle{fancytitle} =[fill=white, text=red]
+\begin{flushright}
+	\begin{tikzpicture}
+		\node [mybox] (box){
+			\begin{minipage}[t!]{3cm}
+				\begin{center}
+					\begin{datesize} \textcolor{red}{#1} \end{datesize} \\
+					\normalsize \textcolor{red}{#2} \\
+					\textcolor{red}{#3}
+				\end{center}
+			\end{minipage}
+		};
+	\end{tikzpicture}%
+\end{flushright}
+
+\begin{tabular}{p{0.2cm}|p{10.5cm}} 
+	 \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+ & \\ \hline
+\end{tabular}
+\newpage
+}
