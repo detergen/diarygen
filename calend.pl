@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use Calendar::Simple;
+use Date::Calc qw(Week_of_Year);
 use Data::Dumper;
 use utf8;
 binmode STDOUT, ":utf8";
@@ -19,6 +20,8 @@ my @MonthsOfYear = qw(января февраля марта апреля мая
 my @DaysOfWeek = qw(вс пн вт ср чт пт сб);
 #my @DaysOfWeek = qw(Вс Пн Вт Ср Чт Пт Сб);
 
+my $woyname = '\# ';
+
 my @sat;
 my $weekday=0;
 
@@ -30,7 +33,8 @@ foreach my $m(@month_range){
 				my $dom = $_;
 				my $dow = @DaysOfWeek[$weekday];
 				my $moy = @MonthsOfYear[$m-1];
-				print "\\ttable\n" if !($weekday == 6);
+				my ($woy, $yearw) = Week_of_Year($year,$m,$dom); #Number of week in year
+				print "\\ttable{$woyname$woy}\n" if !($weekday == 6);
 				#Weekdays on every page
 				print "\\todolist{$dom}{$moy}{$dow}" if (($weekday > 0) && ($weekday < 6));
 
