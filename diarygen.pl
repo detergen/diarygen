@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use Calendar::Simple;
-use Date::Calc qw(Week_of_Year);
+use Date::Calc qw(Week_of_Year Day_of_Week);
 use Data::Dumper;
 use utf8;
 binmode STDOUT, ":utf8";
@@ -17,21 +17,21 @@ my @month_range = ($month_start..$month_finish);
 
 my @MonthsOfYear = qw(января февраля марта апреля мая июня июля августа сентября октября ноября декабря);
 #my @MonthsOfYear = qw(январь февраль март апрель май июнь июль август сентябрь октябрь ноябрь декабрь);
-my @DaysOfWeek = qw(вс пн вт ср чт пт сб);
-#my @DaysOfWeek = qw(Вс Пн Вт Ср Чт Пт Сб);
+my @DaysOfWeek = qw(пн вт ср чт пт сб вс);
+#my @DaysOfWeek = qw(Пн Вт Ср Чт Пт Сб Вс);
 
 my $woyname = '\# ';
 
 my @sat;
-my $weekday=0;
 
 foreach my $m(@month_range){
 	my @month = calendar($m, $year);    
 	foreach (@month) {
 		foreach (@$_){
-			if (!$_ eq undef) {
+			if (defined $_ ) {
 				my $dom = $_;
-				my $dow = @DaysOfWeek[$weekday];
+				my $weekday = Day_of_Week($year,$m,$_) if defined $_;
+				my $dow = @DaysOfWeek[$weekday-1];
 				my $moy = @MonthsOfYear[$m-1];
 				my ($woy, $yearw) = Week_of_Year($year,$m,$dom); #Number of week in year
 				print "\\ttable{$woyname$woy}\n" if !($weekday == 6);
@@ -46,7 +46,7 @@ foreach my $m(@month_range){
 				}
 
 				#Cheking sunday 
-				if ($weekday == 0){
+				if ($weekday == 7){
 					#Chek if month change is on weekend
 					if ((@sat[1] eq $moy) or (@sat[1] eq undef)){
 						print "\\todolistwe{$dom}{$moy}{$dow}" if (@sat[1] eq undef);
@@ -57,8 +57,6 @@ foreach my $m(@month_range){
 					}
 				}
 				print "\n";
-				$weekday++;
-				$weekday=0 if $weekday == 7;
 			}
 		}
 	}
