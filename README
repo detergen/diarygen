@@ -1,4 +1,33 @@
-Script to generate custom diary.
+Added new script on Ruby to produce tex strings fo creating calendar, new feature: "week on page" before each week.
+
+Usage: diarygen.rb  [OPTIONS]
+Script generate sequence of tex strings according to days of calendar for including to calendar.tex, after generating table it's possible to make pdf file for printing.
+
+Options:
+    -s, --startdate  yyyy-mm-dd      First date creating calendar from
+    -f, --finishdate yyyy-mm-dd      Last date creating calendar to
+    -w, --weekonpage                 Include week on page sheet
+    -h, --help 
+
+Example:
+./diarygen.rb -f 2013-01-22 -f 2014-02-12 -w > table.tex  
+pdflatex calendar.tex
+
+_______________________
+* table.tex included to calendar.tex
+
+It have to produce A5 pages with two sided layout diary. Schedule template on left and ToDo list on right side. Day, month and day of the week are in right upper corner in todo list. Weekend days are merged to one page, colored in red. With option -w add "week on page" before current week. The template can be easily corrected to suit your needs.
+
+In this version only A5 format template (templateA5.tex) availible, it is suitable for FiloFax A5 diary. 
+Language - Russian, but can be easily translated in diarygen.rb.
+
+Take a look to examples Jan-Feb 2013:
+calendar.pdf
+table.tex
+
+*****************************************************************
+
+Old owful Perl version:
 
 Using:
 
