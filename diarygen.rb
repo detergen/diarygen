@@ -10,7 +10,11 @@ opt_parser = OptionParser.new do |opt|
   opt.banner = "Usage: diarygen.rb  [OPTIONS]"
   opt.separator  "Script generate sequence of tex strings according to days of calendar for including to calender.tex, after generating table it's possible to make pdf file for printing."
   opt.separator  ""
-  opt.separator  "Options"
+  opt.separator  "Example:"
+  opt.separator  "./diarygen.rb -f 2013-01-22 -f 2014-02-12 -w > table.tex  "
+  opt.separator  "pdflatex calendar.tex"
+  opt.separator  ""
+  opt.separator  "Options:"
 
   opt.on("-s","--startdate  yyyy-mm-dd","First date creating calendar from") do |startdate|
     options[:d] = Date.parse(startdate) 
