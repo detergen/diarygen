@@ -10,7 +10,7 @@ Options:
     -h, --help 
 
 Example:
-./diarygen.rb -f 2013-01-22 -f 2014-02-12 -w > table.tex  
+./diarygen.rb -s 2013-01-22 -f 2014-02-12 -w > table.tex  
 pdflatex calendar.tex
 
 _______________________
