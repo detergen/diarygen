@@ -1,4 +1,4 @@
-Added new script on Ruby to produce tex strings fo creating calendar, new feature: "week on page" before each week.
+Added new script on Ruby to produce tex strings for creating calendar, new feature: "week on page" before each week.
 
 Usage: diarygen.rb  [OPTIONS]
 Script generate sequence of tex strings according to days of calendar for including to calendar.tex, after generating table it's possible to make pdf file for printing.
